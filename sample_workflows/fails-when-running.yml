@@ -10,19 +10,14 @@ jobs:
     name: Say hello in the console
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v3
-
       - name: Echo Hello World
         run: echo "Hello, GitHub Actions!"
 
   error-job:
     name: This job will fail
     runs-on: ubuntu-latest
+    needs: say-hello # This job depends on 'say-hello'
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v3
-
       - name: Force error
         run: |
           echo "This job will fail"
@@ -33,8 +28,5 @@ jobs:
     runs-on: ubuntu-latest
     needs: error-job # This job depends on 'error-job' and will be skipped if it fails
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v3
-
       - name: Run something that won't happen
         run: echo "This won't be executed because the 'error-job' failed."
