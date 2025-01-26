@@ -16,6 +16,32 @@ python manage.py runserver 8001
 
 ---
 
+# Testing
+
+The project uses python built-in `unittest` module to run the tests. To run the tests, you can use the following command:
+
+```bash
+python manage.py test
+```
+
+You can also run the tests with coverage report:
+
+```bash
+python manage.py test --coverage
+```
+
+---
+
+# Connect to the Venv Environment
+
+If you want to connect to the venv environment, you can use the following command:
+
+```bash
+source venv/bin/activate
+```
+
+---
+
 # Database
 
 The file `settings.py` contains the database connection information. By default, django uses sqlite3 as the database engine.
@@ -80,3 +106,4 @@ To build the Docker image, you can use the following command:
 
 ```bash
 docker build -t ${DOCKER_USERNAME}/django-app .
+```
