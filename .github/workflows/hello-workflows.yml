@@ -1,0 +1,16 @@
+name: Say hello to GitHub Actions
+
+on:
+  pull_request:
+    branches:
+      - main
+jobs:
+  say-hello:
+    name: Say hello in a comment
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Comment with Hello World
+        run: echo 'hello github actions!'
