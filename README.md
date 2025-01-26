@@ -18,16 +18,16 @@ python manage.py runserver 8001
 
 # Testing
 
-The project uses python built-in `unittest` module to run the tests. To run the tests, you can use the following command:
+The project uses pytest for testing. To run the tests, you can use the following command:
 
 ```bash
-python manage.py test
+pytest 
 ```
 
-You can also run the tests with coverage report:
+You can also generate a coverage report using the following command:
 
 ```bash
-python manage.py test --coverage
+pytest --cov
 ```
 
 ---
